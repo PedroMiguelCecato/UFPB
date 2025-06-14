@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- OBS: Buscar site da WC3 para sempre ficar atualizado, cuidado com tags obsoletas -->
+<head>
+    <!-- Meta tags essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Ícone da aba do navegador -->
+    <link rel="shortcut icon" href="auxilio/html_icon.ico" type="image/x-icon">
+    
+    <title>HTML 01 - Aprendizado</title>
+
+    <!-- Estilos internos (CSS) -->
+    <style>
+        body {
+            background-color: rgb(131, 131, 247);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        mark {
+            background-color: lime;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Olá, mundo.</h1>
+    <p>Esse é meu primeiro documento.</p>
+
+    <hr>
+
+    <!-- Parágrafos e símbolos -->
+    <h1>Parágrafos:</h1>
+    <p>
+        Podem ser escritos de qualquer forma, pois quem manda são as tags <code>&lt;p&gt;</code> e <code>&lt;/p&gt;</code>. 
+        <br>Quebra de linha: <code>&lt;br&gt;</code>. <!-- LESS THAN / GREATER THAN-->
+        <br><br>Alguns símbolos:
+        &reg; &copy; &trade; &euro; &pound; &yen; &cent; &delta; &Delta; &uarr; <!-- &uparrow -->
+        <br><br>Alguns emojis: 
+        &#x1F596; &#x1F913; <!-- pesquisar em emojipedia.org -->
+    </p>
+
+    <!-- Texto semântico e formatação -->
+    <p>
+        <address>Tóquio, Japão (exemplo de endereço).</address>
+
+        <br><b>Negrito com &lt;b&gt;.</b>
+        <br><strong>Negrito com &lt;strong&gt; (semântica, recomendado).</strong>
+
+        <br><br><i>Itálico com &lt;i&gt;.</i>
+        <br><em>Ênfase com &lt;em&gt; (semântica, recomendado).</em>
+
+        <br><br><mark>Texto marcado (padrão).</mark>
+        <br><mark style="background-color: rgb(240, 91, 71);">Texto marcado com cor personalizada.</mark>
+
+        <br><small>Texto pequeno com &lt;small&gt;.</small>
+
+        <br><br><ins>Texto inserido com &lt;ins&gt;.</ins>
+        <br><u>Texto sublinhado com &lt;u&gt;.</u>
+        <br><del>Texto deletado com &lt;del&gt;.</del>
+
+        <br><br>Texto sobrescrito: x<sup>20</sup> + 3
+        <br>Texto subescrito: H<sub>2</sub>O
+
+        <br><br>Comando em JavaScript: <code>document.getElementById('teste')</code>
+
+        <!-- Código em bloco preservando espaços -->
+        <pre>
+<code>
+x = int(input("Letra: "))
+for i in range(5):
+    print(str(x + i))
+</code>
+        </pre>
+
+        <!-- Citações com significado -->
+        <br>Citação curta: <q>O computador é muito burro.</q>
+        <br>Citação longa:
+        <blockquote cite="https://querobolsa.com.br/revista/citacoes-para-redacao-sobre-tecnologia">
+            “A tecnologia move o mundo.” — Steve Jobs
+        </blockquote>
+
+        <br>Abreviações: estudando 
+        <abbr title="HyperText Markup Language">HTML</abbr> e 
+        <abbr title="Cascading Style Sheets">CSS</abbr>, é muito tranquilo.
+
+        <br>Texto invertido: <bdo dir="rtl">Aprendendo HTML</bdo>
+    </p>
+
+    <hr>
+
+    <!-- Hierarquia de títulos -->
+    <h1>Hierarquia de Títulos: (Nível 1)</h1>
+    <h2>Título de Nível 2</h2>
+    <h3>Título de Nível 3</h3>
+    <h4>Título de Nível 4</h4>
+    <h5>Título de Nível 5</h5>
+    <h6>Título de Nível 6</h6>
+    <p>
+        A hierarquia deve ser respeitada (ex: não pular de h1 para h3). Ela define a importância dos títulos, e não apenas o tamanho da fonte.
+    </p>
+
+    <hr>
+
+    <!-- Inserção de imagens -->
+    <h1>Imagens:</h1>
+    <p>Imagem local (baixada e otimizada):</p>
+    <img src="auxilio/paisagem_650.jpg" alt="Paisagem baixada" width="400">
+
+    <p>Imagem externa (URL):</p>
+    <img src="http://1.bp.blogspot.com/-AjDO_hfuLrc/T_D4JQLyCMI/AAAAAAAAFLw/5_z9JGqBAbc/s1600/rio.jpg" alt="Paisagem linkada" width="400">
+
+    <hr>
+
+    <!-- Listas -->
+    <h1>Listas:</h1>
+    <h2>Ordenadas:</h2>
+    <ol type="A"> <!-- 1 A a I i -->
+        <li>Acordar</li>
+        <li>Comer</li>
+        <li>Estudar</li>
+        <li>Dormir</li>
+    </ol>
+
+    <h2>Não Ordenadas:</h2>
+    <ul type="square"> <!-- disc circle square -->
+        <li>Feijão</li>
+        <li>Arroz</li>
+        <li>Frango</li>
+    </ul>
+
+    <h2>Compostas ou Mistas:</h2>
+    <ul type="circle">
+        <li>Linguagens antigas:</li>
+        <ol type="a">
+            <li>Assembly</li>
+            <ul type="disc">
+                <li>Chata</li>
+                <li>Dificil</li>
+            </ul>
+            <li>Fortran</li>
+            <ul type="disc">
+                <li>Chata</li>
+                <li>Fácil</li>
+            </ul>
+        </ol>
+        <li>Linguagens novas:</li>
+        <ol type="a" start="3">
+            <li>Python</li>
+            <ul type="disc">
+                <li>Legal</li>
+                <li>Fácil</li>
+            </ul>
+            <li>PHP</li>
+            <ul type="disc">
+                <li>Legal</li>
+                <li>Dificil</li>
+            </ul>
+        </ol>
+    </ul>
+
+    <h2>Definição:</h2>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Linguagem de marcação para a criação do conteúdo de um site.</dd>
+        <dt>CSS</dt>
+        <dd>Linguagem de marcação para a criação do design de um site.</dd>
+        <dt>JavaScript</dt>
+        <dd>Linguagem de programação para a criação de interatividade de um site.</dd>
+    </dl>
+
+    <hr>
+    
+    <!-- Links -->
+    <h1>Links:</h1>
+    <h2>Externos:</h2>
+    <p>Meu perfil do <a href="https://github.com/PedroMiguelCecato" target="_blank" rel="external">GitHub</a>.</p>
+
+    <h2>Internos:</h2>
+    <p><a href="pg02.html" target="_self" rel="next">Segunda página do site.</a></p>
+    <p><a href="auxilio/pg03.html" rel="next">Terceira página do site.</a></p>
+
+    <h2>Downloads:</h2>
+    <ul>
+        <li><a href="auxilio/Historico_P4.pdf" download="Historico_P4.pdf" type="application/pdf">Histórico p4 pdf</a></li>
+        <li><a href="auxilio/Historico_P4.zip" download="Historico_P4.zip" type="application/zip">Histórico p4 zip</a></li>
+    </ul>
+</body>
+
+</html>
