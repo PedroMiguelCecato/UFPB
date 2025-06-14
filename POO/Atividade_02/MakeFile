@@ -1,0 +1,44 @@
+# Nome do executável
+TARGET = campeonato
+
+# Compilador
+CXX = g++
+
+# Opções de compilação
+CXXFLAGS = -std=c++11 -Wall
+
+# Diretório de origem
+SRCDIR = src
+
+# Diretório para objetos compilados
+OBJDIR = obj
+
+# Arquivos de cabeçalho
+INCLUDES = -Iinclude
+
+# Lista de arquivos fontes
+SRCS = $(wildcard $(SRCDIR)/*.cpp)
+
+# Gera lista de objetos correspondentes
+OBJS = $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
+
+# Regras principais
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Compila os arquivos objeto a partir dos arquivos fonte
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+	@mkdir -p $(OBJDIR)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+# Limpa os objetos e executáveis
+clean:
+	rm -rf $(OBJDIR)/*.o $(TARGET)
+
+# Executa o programa
+run: $(TARGET)
+	./$(TARGET)
+
+.PHONY: all clean run
